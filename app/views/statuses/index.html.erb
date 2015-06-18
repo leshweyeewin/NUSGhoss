@@ -3,6 +3,7 @@
 </div>
 <%= link_to "Create Status", new_status_path, class:"btn btn-primary"%>
 <% @statuses.each do |status| %>
+  
   <div class="status">
     <p><%= status.content %></p>
     <div class="meta">
