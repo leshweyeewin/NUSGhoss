@@ -1,0 +1,24 @@
+// Place all the styles related to the statuses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Navbar CSS */
+.navbar-default{
+	background-color:#F05B47;
+}
+
+a.navbar-brand{
+	color:#FFF !important;
+}
+
+/* To prevent fixed navbar covering up the content  */
+body { padding-top: 70px; }
+
+.nav.navbar-nav a{
+	color:#FFF !important;
+}
+
+.page-header{
+	margin:0;
+}
