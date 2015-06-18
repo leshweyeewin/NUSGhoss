@@ -1,5 +1,6 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /statuses
   # GET /statuses.json
@@ -14,7 +15,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/new
   def new
-    @status = Status.new
+    @status = current_user.statuses.build
   end
 
   # GET /statuses/1/edit
@@ -24,12 +25,12 @@ class StatusesController < ApplicationController
   # POST /statuses
   # POST /statuses.json
   def create
-    @status = Status.new(status_params)
+    @status = current_user.statuses.build(status_params)
 
     respond_to do |format|
       if @status.save
-        format.html { redirect_to @status, notice: 'Status was successfully created.' }
-        format.json { render :show, status: :created, location: @status }
+        format.html { redirect_to statuses_url, notice: 'Status was successfully created.' }
+        format.json { head :no_content }
       else
         format.html { render :new }
         format.json { render json: @status.errors, status: :unprocessable_entity }
