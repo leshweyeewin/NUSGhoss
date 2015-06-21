@@ -22,7 +22,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+#Added Gems
+# Use Devise for User Model
 gem 'devise'
+# Use Active Admin for Admin Monitoring
+gem 'activeadmin', github: 'activeadmin'
+# Use Protected Attributes for permission on strong parameters
+gem 'protected_attributes'
 gem 'simple_form'
 
 # Use ActiveModel has_secure_password

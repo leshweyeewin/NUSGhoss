@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "ivle.js" %>
+  <%= javascript_include_tag "active_admin.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,7 +24,7 @@
 		      	</ul>
 		      	<ul class="nav navbar-nav pull-right">
 		      		<% if user_signed_in? %>
-						<li><%= link_to current_user.email, edit_user_registration_path %></li>
+						<li><%= link_to current_user.profile_name, edit_user_registration_path %></li>
 						<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
 					<% else %>
 						<li><a href="" id='register'>Register</a></li>
