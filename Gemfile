@@ -27,7 +27,7 @@ gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-gem 'strong_parameters'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
