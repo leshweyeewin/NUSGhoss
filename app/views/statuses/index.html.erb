@@ -1,9 +1,7 @@
 <div class="page-header">
   <h1>News Feed</h1>  
 </div>
-<%= link_to "Create Status", new_status_path, class:"btn btn-primary"%>
 <% @statuses.each do |status| %>
-  
   <div class="status">
     <p><%= link_to status.content, status %></p>
     <div class="meta">
@@ -18,4 +16,12 @@
       <% end %> -->
     </div>
   </div>
-<% end %>
+<% end %> 
+<div class="round-button">
+  <div class="round-button-circle">
+    <%= link_to "New Status", new_status_path, class:"roundbutton create", id:"create-button" %>  
+  </div>
+</div>
+
+
+

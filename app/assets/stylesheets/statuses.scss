@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1, h2, h3, h4, h5, h6, p, a{
+	font-family: 'Lora', serif;
+}
 
 /* Navbar CSS */
 .navbar-default{
@@ -17,12 +20,72 @@ a.navbar-brand{
 }
 
 /* To prevent fixed navbar covering up the content  */
-body { padding-top: 70px; }
+body { padding-top: 40px; }
 
 .nav.navbar-nav a{
 	color:#FFF !important;
 }
 
 .page-header{
-	margin:0;
+	margin-bottom:20px;
 }
+
+/* APPLICATION TEMPALTE CSS */
+
+.notice, .alert{
+	display:none;
+}
+
+/* INDEX PAGE CSS */
+.round-button-circle {
+	width: 75px;
+	height:75px;
+	padding-bottom: 50px;
+    border-radius: 50px;
+    overflow:hidden;
+    background: #F05B47; 
+    box-shadow: 0 0 3px gray;
+    position:fixed;
+    right:18%;
+    bottom:10%;
+}
+.round-button-circle:hover {
+	background:#B40404;
+}
+.round-button a {
+    display:block;
+	float:left;
+	width:100%;
+	padding-top:50%;
+    padding-bottom:50%;
+	line-height:1em;
+	margin-top:-0.9em;
+	text-align:center;
+	color:#FFF;
+    font-family:Verdana;
+    font-size:1em;
+    text-decoration:none;
+}
+
+.status a{
+	text-decoration: none;
+	color:#777;
+}
+
+.status p{
+	margin:0;
+	color:#777;
+}
+
+.meta{
+	margin-bottom:20px;
+}
+
+/* NEW STATUS CSS */
+.back-button{
+	margin-top:-30px;
+	padding:6px 40px;
+	float:right;
+}
+
+/* USER LOGIN CSS */
