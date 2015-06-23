@@ -1,5 +1,5 @@
 class StatusesController < ApplicationController
-  before_action :set_status, only: [:show, :edit, :update, :destroy]
+  before_action :set_status, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /statuses
@@ -11,6 +11,8 @@ class StatusesController < ApplicationController
   # GET /statuses/1
   # GET /statuses/1.json
   def show
+    @status = Status.find(params[:id])
+    @user_comment = UserComment.new(:status_id => @status.id)
   end
 
   # GET /statuses/new
