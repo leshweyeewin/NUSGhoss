@@ -1,7 +1,6 @@
 ActiveAdmin.register Status do
 permit_params :content, :user_id
 
-
   index do
     selectable_column
     id_column
