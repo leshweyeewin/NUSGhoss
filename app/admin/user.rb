@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-
+  actions :all, :except => [:new, :edit]
   permit_params :first_name, :last_name, :profile_name, :email, :password, :password_confirmation
 
   index do
