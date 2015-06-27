@@ -16,5 +16,11 @@ ActiveAdmin.register_page "Dashboard" do
         strong (link_to "View All Statuses", :admin_statuses)
     end
 
+    panel "Popular Tags" do 
+        table_for ActsAsTaggableOn::Tag.most_used(15) do
+            column "Tag", :name 
+        end
+    end
+
   end # content
 end
