@@ -1,0 +1,41 @@
+<div id="profile-container" class="row">
+    <div id="profile" class="col-md-4 bg-cyan full-height no-padding">
+        <%= image_tag "profile.png", :class=>"profile-image" %>
+
+        <label for="" class="title">Name</label>
+        <p>
+          <%= current_user.full_name %>
+        </p>
+        <label for="" class="title">Alias</label>
+        <p>
+          <%= current_user.profile_name %>
+        </p>
+        <label for="" class="title">Email</label>
+        <p>
+          <%= current_user.email %>
+        </p>
+          <%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-primary", id:"button-profile" %>
+    </div>
+    <div id="status" class="col-md-8 full-height">
+      <h2>Your Posts</h2>
+      <div class="status-container">
+        <% @statuses.each do |status| %>
+          <div class="status">
+            <p><%= link_to status.content, status %></p>
+            <div class="meta">
+              <%= time_ago_in_words(status.created_at) + " ago " %>
+              <!--
+              <% if status.user == current_user %>
+                <span class="admin">
+                  <%= "|" %>
+                  <%= link_to "Edit", edit_status_path(status) %>
+                  <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure you want to delete this?"} %>
+                </span>
+              <% end %> -->
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+</div>

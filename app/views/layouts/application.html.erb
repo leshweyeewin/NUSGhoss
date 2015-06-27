@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>NUSGhoss</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "ivle.js" %>
@@ -26,7 +26,7 @@
 		      	<ul class="nav navbar-nav pull-right">
 		      		<li><%= link_to "Admin", new_admin_user_session_path %></li>
 		      		<% if user_signed_in? %>
-						<li><%= link_to current_user.profile_name, edit_user_registration_path %></li>
+						<li><%= link_to current_user.profile_name, "/users/" + current_user.id.to_s %></li>
 						<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
 					<% else %>
 						<li><a href="" id='register'>Register</a></li>
@@ -39,7 +39,7 @@
 	<div class="container">
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
-		<%= yield %>	
+		<%= yield %>
 	</div>
 	<script type="text/javascript">
 		$(function(){
@@ -48,7 +48,7 @@
 
 			//TEST AUTH
 			var re = /(.*)\/.*/;
-			myapp.auth($('#register'), window.location.origin + re.exec(window.location.pathname)[1] + "/users/sign_up");	
+			myapp.auth($('#register'), window.location.origin + "/users/sign_up");
 		});
 	</script>
 </body>
