@@ -6,18 +6,26 @@ h1, h2, h3, h4, h5, h6, p, a{
 	font-family: 'Lora', serif;
 }
 
+a{
+		font-size:1.3em;
+}
+
 /* Navbar CSS */
 .navbar-default{
 	background-color:#F05B47;
 }
 
+.sidebar-animate{
+	background-color:#333F4F;
+}
 .navbar-header{
-	width:100%;
+
 }
 
 a.navbar-brand{
 	color:#FFF !important;
 }
+
 
 /* To prevent fixed navbar covering up the content  */
 body { padding-top: 40px; }
@@ -43,7 +51,7 @@ body { padding-top: 40px; }
 	padding-bottom: 50px;
     border-radius: 50px;
     overflow:hidden;
-    background: #F05B47; 
+    background: #F05B47;
     box-shadow: 0 0 3px gray;
     position:fixed;
     right:18%;
@@ -69,17 +77,19 @@ body { padding-top: 40px; }
 
 .status a{
 	text-decoration: none;
-	color:#777;
+	color:#333F4F;
 }
 
 .status p{
 	margin:0;
-	color:#777;
+	color:#333F4F;
 }
 
 .meta{
 	margin-bottom:20px;
+	color:#777;
 }
+
 
 /* NEW STATUS CSS */
 .back-button{
@@ -89,3 +99,18 @@ body { padding-top: 40px; }
 }
 
 /* USER LOGIN CSS */
+@media screen and (max-width:768px){
+	#menu-navbar{
+		display:none;
+	}
+
+	ul.nav.navbar-nav.pull-right{
+		width:100%;
+	}
+}
+
+@media screen and (min-width:768px){
+	.hidden-lg{
+		display:none !important;
+	}
+}

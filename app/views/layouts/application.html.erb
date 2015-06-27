@@ -6,34 +6,48 @@
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "ivle.js" %>
+  <%= javascript_include_tag "sidebar.js" %>
   <%= javascript_include_tag "active_admin.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
-		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-		      		</button>
-		      	<%= link_to "NUSGhoss", root_path, {:class=>"navbar-brand"} %>
-		      	<ul class="nav navbar-nav">
-		      		<li><%= link_to "News Feed", statuses_path %></li>
-		      	</ul>
-		      	<ul class="nav navbar-nav pull-right">
-		      		<li><%= link_to "Admin", new_admin_user_session_path %></li>
-		      		<% if user_signed_in? %>
-						<li><%= link_to current_user.profile_name, "/users/" + current_user.id.to_s %></li>
-						<li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
-					<% else %>
-						<li><a href="" id='register'>Register</a></li>
-						<li><%= link_to "Log in", new_user_session_path %></li>
-					<% end %>
-		      	</ul>
-		    </div>
+              <%= link_to "NUSGhoss", root_path, {:class=>"navbar-brand"} %>
+              <button type="button" class="navbar-toggle hidden-md hidden-lg" data-toggle="sidebar" data-target=".sidebar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+        </div>
+
+        <!-- Main Navbar -->
+        <ul class="nav navbar-nav pull-right" id="menu-navbar">
+            <li><%= link_to "Admin", new_admin_user_session_path %></li>
+            <% if user_signed_in? %>
+            <li><%= link_to current_user.profile_name, "/users/" + current_user.id.to_s %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
+            <% else %>
+            <li><a href="" id='register'>Register</a></li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+            <% end %>
+        </ul>
+
+        <!-- Mobile Sliding Menu -->
+        <div class="navbar-collapse col-xs-4 col-sm-3 col-md-2 sidebar sidebar-right sidebar-animate">
+            <ul class="nav navbar-nav pull-right">
+                <li><%= link_to "Admin", new_admin_user_session_path %></li>
+                <% if user_signed_in? %>
+                <li><%= link_to current_user.profile_name, "/users/" + current_user.id.to_s %></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %><li>
+                <% else %>
+                <li><a href="" id='register'>Register</a></li>
+                <li><%= link_to "Log in", new_user_session_path %></li>
+                <% end %>
+            </ul>
+        </div>
 	  	</div>
 	</nav>
 	<div class="container">
