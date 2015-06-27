@@ -1,17 +1,17 @@
 class StatusesController < ApplicationController
-  before_action :set_status, only: [:edit, :update, :destroy]
+  before_action :set_status, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /statuses
   # GET /statuses.json
   def index
-    @statuses = Status.all.order("created_at DESC")
+    @q = Status.ransack(params[:q])
+    @statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC")
   end
 
   # GET /statuses/1
   # GET /statuses/1.json
   def show
-    @status = Status.find(params[:id])
     @user_comment = UserComment.new(:status_id => @status.id)
   end
 
@@ -64,6 +64,11 @@ class StatusesController < ApplicationController
     end
   end
 
+  def tagged
+      @statuses = Status.tagged_with(params[:tag])
+      @tag = ActsAsTaggableOn::Tag.find_by_name(params[:tag])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_status
@@ -72,6 +77,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:name, :content)
+      params.require(:status).permit(:user_id, :content, :tag_list)
     end
 end

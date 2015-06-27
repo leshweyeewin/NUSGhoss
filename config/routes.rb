@@ -9,9 +9,13 @@ Rails.application.routes.draw do
   resources :statuses
   resources :user_comments
   resources :users, only: [:show]
+  resources :tags
+  resources :taggings
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root to: 'statuses#index'
+  get 'tagged', :to => 'statuses#tagged', :as => :tagged
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

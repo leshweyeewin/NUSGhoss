@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <p>
+    <%= f.label :tags, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %><br />
+  </p>
   <div class="field"><%= f.input :content %><br></div>
   <div class="form-actions">
     <%= f.button :submit %>

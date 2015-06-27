@@ -1,18 +1,18 @@
 <div class="page-header">
-  <h1>News Feed</h1>  
+  <h1>
+    <% if User.find_by_profile_name(@tag.name) %>
+      <%= "@"+@tag.name %>
+    <% end %>
+  </h1>  
 </div>
 <% @statuses.each do |status| %>
   <div class="status">
     <p><%= link_to status.content, status %></p>
     <div class = "tag">
-      <% if status.tags.any? %>
-        <p>Tags: 
-        <% status.tags.each do |tag| %>
-          <% if User.find_by_profile_name(tag.name) %>
-            <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
-          <% end %>
+      <% status.tags.each do |tag| %>
+        <% if User.find_by_profile_name(tag.name) %>
+          <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
         <% end %>
-        </p>
       <% end %>
     </div>
     <div class="meta">

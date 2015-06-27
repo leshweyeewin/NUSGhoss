@@ -34,8 +34,13 @@ gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-
+# Use Rails 12Factor for assests pipeline issues
 gem 'rails_12factor', group: :production
+# Use Acts As Taggable On for tagging feature
+gem 'acts-as-taggable-on'
+# Use Ransack for search functions
+gem 'ransack'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

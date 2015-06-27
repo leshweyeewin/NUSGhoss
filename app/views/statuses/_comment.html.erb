@@ -1,3 +1,6 @@
 <div class="comment">
-	<i><%= simple_format h(comment.content) %></i>
+	<i><%= comment.content %></i>
+	<div class="meta">
+		<%= time_ago_in_words(comment.created_at) + " ago " %> 
+	</div>
 </div>
