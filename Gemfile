@@ -35,6 +35,7 @@ gem 'simple_form'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'rails_12factor', group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'
 
