@@ -4,7 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
 
-     panel "Recent Statuses" do 
+    panel "Recent Statuses" do 
         table_for Status.order("created_at desc").limit(15) do
             column "Status", :content do |status|
                 link_to status.content, [:admin,status]
@@ -22,5 +22,15 @@ ActiveAdmin.register_page "Dashboard" do
         end
     end
 
+    panel "Facilities" do 
+        table_for Facility.order("created_at desc").limit(15) do
+            column "Facility", :name do |facility|
+                link_to facility.name, [:admin,facility]
+            end
+            column :created_at
+            column :updated_at
+        end
+        strong (link_to "View All Facilities", :admin_facilities)
+    end
   end # content
 end
