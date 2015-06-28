@@ -61,13 +61,11 @@
         </div>
 		<%= yield %>
 	</div>
-  <% if user_signed_in? %>
-    <div class="round-button">
-      <div class="round-button-circle">
-        <%= link_to "+", new_status_path, class:"roundbutton create", id:"create-button" %>
-      </div>
+  <div class="round-button">
+    <div class="round-button-circle">
+      <%= link_to "+", new_status_path, class:"roundbutton create", id:"create-button" %>
     </div>
-  <% end %>
+  </div>
 	<script type="text/javascript">
 		$(function(){
 			var apikey = "nt5s4waVtfzugEGRSuW5Z";
