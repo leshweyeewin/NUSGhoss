@@ -1,7 +1,9 @@
 <div class="page-header">
-  <h1>News Feed</h1>
+  <h1>
+      <%= @facility.name %>
+  </h1>  
 </div>
-<% @statuses.each do |status| %>
+<% if @statuses.each do |status| %>
   <div class="status">
     <p><%= link_to status.content, status %></p>
     <div class = "tag">
@@ -22,4 +24,8 @@
       <%= time_ago_in_words(status.created_at) + " ago " %>
     </div>
   </div>
+<% end.empty? %>
+  <p>Sorry, there are no statuses for this facility yet.</p>
 <% end %>
+<%= link_to 'Back', facilities_path %>
+| <%= link_to 'Home', root_path %>

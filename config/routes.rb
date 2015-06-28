@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -8,9 +7,10 @@ Rails.application.routes.draw do
 
   resources :statuses
   resources :user_comments
-  resources :users, only: [:show]
+  resources :users, only: [:index, :show]
   resources :tags
   resources :taggings
+  resources :facilities, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Facilities</h1>
+<ul>
+  <% @facilities.each do |facility| %>
+    <li><%= link_to facility.name, facility %></li>
+  <% end %>
+</ul>

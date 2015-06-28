@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Users</h1>
+<table>
+  <% @users.each do |user| %>
+  	<tr>
+  		<td><%= image_tag "profile.png", :class=>"user-image" %></td>
+    	<td><%= link_to user.profile_name, user %></td>
+	</tr>
+  <% end %>
+</table>

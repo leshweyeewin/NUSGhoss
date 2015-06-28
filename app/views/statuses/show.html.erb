@@ -7,6 +7,9 @@
       <% if User.find_by_profile_name(tag.name) %>
         <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
       <% end %>
+      <% if Facility.find_by_name(tag.name) %>
+        <%= link_to "#"+tag.name, tagged_url(:tag => tag.name) %>
+      <% end %>
     <% end %>
   </p>
   <% end %>
