@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-  	@users = User.all.order(params[:profile_name])
+  	@users = User.all.order("profile_name ASC")
   end
   
   def show

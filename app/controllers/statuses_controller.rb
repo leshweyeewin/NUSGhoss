@@ -65,7 +65,7 @@ class StatusesController < ApplicationController
   end
 
   def tagged
-      @statuses = Status.tagged_with(params[:tag])
+      @statuses = Status.tagged_with(params[:tag]).order("created_at DESC")
       @tag = ActsAsTaggableOn::Tag.find_by_name(params[:tag])
   end
 

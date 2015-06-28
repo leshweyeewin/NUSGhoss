@@ -1,31 +1,38 @@
-<div class="page-header">
-  <h1>
-      <%= @facility.name %>
-  </h1>  
-</div>
-<% if @statuses.each do |status| %>
-  <div class="status">
-    <p><%= link_to status.content, status %></p>
-    <div class = "tag">
-      <% if status.tags.any? %>
-        <p>Tags:
-        <% status.tags.each do |tag| %>
-          <% if User.find_by_profile_name(tag.name) %>
-            <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
-          <% end %>
-          <% if Facility.find_by_name(tag.name) %>
-            <%= link_to "#"+tag.name, tagged_url(:tag => tag.name) %>
-          <% end %>
+<div id="profile-container" class="row">
+    <div id="profile" class="col-md-4 bg-cyan full-height no-padding">
+      <%= image_tag "facility.png", :class=>"profile-image" %>
+      <label for="" class="title"><%= @facility.name %></label>
+    </div>
+    <div id="status" class="col-md-8 full-height">
+      <h2>Mentioned Posts</h2>
+      <div class="status-container">
+        <% if @statuses.each do |status| %>
+          <div class="status">
+            <p><%= link_to status.content, status %></p>
+            <div class = "tag">
+              <% if status.tags.any? %>
+                <p>Tags:
+                <% status.tags.each do |tag| %>
+                  <% if User.find_by_profile_name(tag.name) %>
+                    <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
+                  <% end %>
+                  <% if Facility.find_by_name(tag.name) %>
+                    <%= link_to "#"+tag.name, tagged_url(:tag => tag.name) %>
+                  <% end %>
+                <% end %>
+                </p>
+              <% end %>
+            </div>
+            <div class="meta">
+              <%= time_ago_in_words(status.created_at) + " ago " %>
+            </div>
+          </div>
+        <% end.empty? %>
+          <p>Sorry, there are no statuses for this facility yet.</p>
         <% end %>
-        </p>
-      <% end %>
+        <%= link_to 'Back', facilities_path %>
+        | <%= link_to 'Home', root_path %>
+      </div>
     </div>
-    <div class="meta">
-      <%= time_ago_in_words(status.created_at) + " ago " %>
-    </div>
-  </div>
-<% end.empty? %>
-  <p>Sorry, there are no statuses for this facility yet.</p>
-<% end %>
-<%= link_to 'Back', facilities_path %>
-| <%= link_to 'Home', root_path %>
+ </div>
+</div>

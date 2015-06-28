@@ -1,7 +1,7 @@
 class FacilitiesController < InheritedResources::Base
   
   def index
-    @facilities = Facility.all.order("created_at DESC")
+    @facilities = Facility.all.order("name ASC")
   end
 
   def show
