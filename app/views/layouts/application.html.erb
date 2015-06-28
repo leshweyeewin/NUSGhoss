@@ -55,19 +55,23 @@
 	<div class="container">
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
-		<div class="search">
-          <%= search_form_for @q, :html => { :class => "form-wrapper cf" } do |f| %>
-	          <%= f.text_field :tags_name_or_content_cont, :id => "search-textfield" %>
-	          <%= f.submit "Search", :id => 'search-button'  %>
+    <% unless current_page?(new_status_path || edit_status_path) %>
+  		<div class="search">
+        <%= search_form_for @q, :html => { :class => "form-wrapper cf" } do |f| %>
+  	    <%= f.text_field :tags_name_or_content_cont, :id => "search-textfield" %>
+  	      <%= f.submit "Search", :id => 'search-button'  %>
           <% end %>
-        </div>
+      </div>
+    <% end %>
 		<%= yield %>
 	</div>
-  <div class="round-button">
-    <div class="round-button-circle">
-      <%= link_to "+", new_status_path, class:"roundbutton create", id:"create-button" %>
+  <% unless current_page?(new_status_path) %>
+    <div class="round-button">
+      <div class="round-button-circle">
+          <%= link_to "+", new_status_path, class:"roundbutton create", id:"create-button" %>  
+      </div>
     </div>
-  </div>
+  <% end %>
 	<script type="text/javascript">
 		$(function(){
 			var apikey = "nt5s4waVtfzugEGRSuW5Z";
