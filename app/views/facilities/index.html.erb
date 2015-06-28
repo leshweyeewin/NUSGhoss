@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Facilities</h1>
-<ul>
+<table>
   <% @facilities.each do |facility| %>
-    <li><%= link_to facility.name, facility %></li>
+  <tr>
+  		<td><%= image_tag "facility.png", :class=>"image" %></td>
+    	<td><%= link_to facility.name, facility %></td>
+	</tr>
   <% end %>
-</ul>
+</table>
