@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
 	def full_name
     	[first_name, last_name].join(' ')
 	end
+
+  def self.search(search)
+      User.find_by_first_name(search) || User.find_by_last_name(search) || User.find_by_profile_name(search) 
+  end
 end
