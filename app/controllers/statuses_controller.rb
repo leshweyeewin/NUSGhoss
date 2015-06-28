@@ -1,7 +1,7 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :tagged]
-
+  before_action :find_tagged_statuses, only: [:tagged]
   # GET /statuses
   # GET /statuses.json
   def index
@@ -13,6 +13,15 @@ class StatusesController < ApplicationController
   # GET /statuses/1.json
   def show
     @user_comment = UserComment.new(:status_id => @status.id)
+    if user_signed_in?
+      if @status.tags.any?
+        @status.tags.each do |tag|
+          if current_user.first_name == tag.name || current_user.last_name == tag.name || current_user.profile_name == tag.name
+            @tagged_statuses = true
+          end
+        end
+      end
+    end
   end
 
   # GET /statuses/new
@@ -65,14 +74,29 @@ class StatusesController < ApplicationController
   end
 
   def tagged
-      @statuses = Status.tagged_with(params[:tag]).order("created_at DESC")
       @tag = ActsAsTaggableOn::Tag.find_by_name(params[:tag])
+      unless @user
+        @statuses = Status.tagged_with(params[:tag]).order("created_at DESC")
+      end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_status
       @status = Status.find(params[:id])
+    end
+
+    def find_tagged_statuses
+      @user = User.search(params[:tag])
+      if @user
+        @statuses = Status.tagged_with(@user.first_name).order("created_at DESC") 
+        unless @user.first_name == @user.last_name
+          @statuses += Status.tagged_with(@user.last_name).order("created_at DESC")
+        end
+        unless @user.first_name == @user.profile_name || @user.last_name == @user.profile_name
+          @statuses += Status.tagged_with(@user.profile_name).order("created_at DESC")
+        end 
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
