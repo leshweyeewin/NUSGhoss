@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :tagged]
 
   # GET /statuses
   # GET /statuses.json
@@ -65,7 +65,7 @@ class StatusesController < ApplicationController
   end
 
   def tagged
-      @statuses = Status.tagged_with(params[:tag])
+      @statuses = Status.tagged_with(params[:tag]).order("created_at DESC")
       @tag = ActsAsTaggableOn::Tag.find_by_name(params[:tag])
   end
 

@@ -21,7 +21,7 @@ class Status < ActiveRecord::Base
 
 	def must_exist_in_database
 		self.tags.each do |tag|
-			errors.add(tag.name, ' must exist in User database, profile_name attribute') unless User.find_by_profile_name(tag.name) 
+			errors.add(tag.name, ' must exist in User or Facility databases') unless User.search(tag.name) || Facility.find_by_name(tag.name)
 		end
 	end
 end

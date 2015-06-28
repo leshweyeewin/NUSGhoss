@@ -5,6 +5,12 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( ivle.js )
 Rails.application.config.assets.precompile += %w( active_admin.js )
 Rails.application.config.assets.precompile += %w( sidebar.js )
+
+Rails.application.config.assets.precompile += %w( bootstrap.css)
+Rails.application.config.assets.precompile += %w( font-awesome.css )
+Rails.application.config.assets.precompile += %w( statuses.css )
+Rails.application.config.assets.precompile += %w( sidebar.css )
+Rails.application.config.assets.precompile += %w( users.css )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Facilities</h1>
+<table>
+  <% @facilities.each do |facility| %>
+  <tr>
+  		<td><%= image_tag "facility.png", :class=>"image" %></td>
+    	<td><%= link_to facility.name, facility %></td>
+	</tr>
+  <% end %>
+</table>
