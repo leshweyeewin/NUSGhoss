@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "ivle.js", "sidebar.js", "active_admin.js", "bootstrap.js" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -66,7 +67,7 @@
   <% unless current_page?(new_status_path) %>
     <div class="round-button">
       <div class="round-button-circle">
-          <%= link_to "+", new_status_path, class:"roundbutton create", id:"create-button" %>  
+          <%= link_to "+", new_status_path, class:"roundbutton create", id:"create-button" %>
       </div>
     </div>
   <% end %>
