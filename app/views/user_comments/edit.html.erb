@@ -1,20 +1,3 @@
 <h1>Editing Comment</h1>
-<%= simple_form_for(@user_comment) do |f| %>
-  <% if @user_comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user_comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <% @user_comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p><%= f.hidden_field :status_id %></p>
-  <p><%= f.hidden_field :user_id %></p>
-  <div class="field"><%= f.input :content %><br></div>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<%= render 'form' %>
+<%= link_to 'Back', @status %>

@@ -1,0 +1,9 @@
+<%= simple_form_for @user_comment do |f| %>
+	<%= f.hidden_field :status_id %>
+	<%= f.hidden_field :user_id %>
+	<div class="field"><%= f.input :content %><br></div>
+  	<div class="form-actions">
+    	<%= f.button :submit %>
+  	</div>
+	<br />
+<% end %>
