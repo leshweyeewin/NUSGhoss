@@ -23,6 +23,8 @@
     </div>
     <div class="meta">
       <%= time_ago_in_words(status.created_at) + " ago " %> 
+      | <%= status.user_comments.count %> comment(s)
+      | <%= status.get_likes.size %> pick(s) 
     </div>
   </div>
 <% end %> 

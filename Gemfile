@@ -22,7 +22,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'yui-compressor', '~> 0.12.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'yui-compressor', '~> 0.12.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Added Gems
@@ -42,7 +41,8 @@ gem 'rails_12factor', group: :production
 gem 'acts-as-taggable-on'
 # Use Ransack for search functions
 gem 'ransack'
-
+#Use Acts As Votable for like feature
+gem 'acts_as_votable'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

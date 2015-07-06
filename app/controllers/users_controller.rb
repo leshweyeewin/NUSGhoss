@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @statuses = Status.where("user_id = ?", @user.id).order("created_at DESC")
+    @liked_statuses = @user.find_liked_items
     @tagged_statuses = Status.tagged_with(@user.first_name).order("created_at DESC") 
     unless @user.first_name == @user.last_name
     	@tagged_statuses += Status.tagged_with(@user.last_name).order("created_at DESC")

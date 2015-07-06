@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root to: 'statuses#index'
   get 'tagged', :to => 'statuses#tagged', :as => :tagged
+  get 'statuses/:id/liked', :to => 'statuses#add_to_favourities', :as => :add_to_favourities
+  get 'statuses/:id/unliked', :to => 'statuses#remove_from_favourities', :as => :remove_from_favourities
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

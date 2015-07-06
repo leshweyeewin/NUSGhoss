@@ -26,15 +26,22 @@
   <strong>Updated at:</strong>
   <%= @status.updated_at.strftime("%b %d %Y %r") %>
 </p>
+<%= link_to 'Back', statuses_path %> 
 <% if @status.user == current_user %> 
-	<%= link_to 'Edit', edit_status_path(@status) %> |
+	| <%= link_to 'Edit', edit_status_path(@status) %> 
 <% end %>
 <% if @status.user == current_user || @tagged_statuses %>
-   <%= link_to "Delete", @status, method: :delete, data: { confirm: "Are you sure you want to delete this?"} %> |
+   | <%= link_to "Delete", @status, method: :delete, data: { confirm: "Are you sure you want to delete this?"} %> 
+<% else %>
+  <% if current_user.liked? @status %>
+    | <%= link_to "Remove from Favourities", remove_from_favourities_url(@status) %>
+  <% else %>
+    | <%= link_to "Add to Favourities", add_to_favourities_url(@status) %>
+  <% end %>
 <% end %>
-<%= link_to 'Back', statuses_path %>
+<p></p>
 <div class="comment">
-	<p></p><p><strong><%= @status.user_comments.count %> comment(s)</strong></p>
+	<p><strong><%= @status.user_comments.count %> comment(s)</strong> | <strong><%= @status.get_likes.size %> pick(s) </strong></p>
 	<%= render :partial => 'comment', :collection => @status.user_comments.order("created_at DESC") %> 
 	<% if user_signed_in? %>
 	  <h3>Add a Comment</h3>

@@ -1,6 +1,7 @@
 class Status < ActiveRecord::Base
 	attr_accessible :content, :user_id, :tag_list
 	acts_as_taggable
+	acts_as_votable
 	
 	belongs_to :user
 	has_many :user_comments, :dependent => :destroy

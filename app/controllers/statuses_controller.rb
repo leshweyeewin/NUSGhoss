@@ -1,5 +1,5 @@
 class StatusesController < ApplicationController
-  before_action :set_status, only: [:show, :edit, :update, :destroy]
+  before_action :set_status, only: [:show, :edit, :update, :destroy, :add_to_favourities, :remove_from_favourities]
   before_action :authenticate_user!, except: [:index, :show, :tagged]
   before_action :find_tagged_statuses, only: [:tagged]
   # GET /statuses
@@ -78,6 +78,16 @@ class StatusesController < ApplicationController
       unless @user
         @statuses = Status.tagged_with(params[:tag]).order("created_at DESC")
       end
+  end
+
+  def add_to_favourities
+    @status.liked_by current_user
+    redirect_to @status
+  end
+
+  def remove_from_favourities
+    @status.unliked_by current_user
+    redirect_to @status
   end
 
   private
