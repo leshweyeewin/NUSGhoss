@@ -250,3 +250,10 @@ body { padding-top: 40px; }
 		display:none !important;
 	}
 }
+
+/* Tag Cloud */
+.tag-cloud a{
+  margin-right: 2em;
+  text-decoration: none;
+  color:#333F4F;
+}

@@ -4,11 +4,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :site_search
-
+  helper_method :popular_tags
+  
   def site_search
     @q = Status.ransack(params[:q])
     @q_statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC")
   end 
+
+  def popular_tags
+    ActsAsTaggableOn::Tag.most_used(10)
+  end
 
   protected
   def configure_permitted_parameters
