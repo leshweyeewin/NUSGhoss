@@ -12,7 +12,7 @@ a{
 
 /* Navbar CSS */
 .navbar-default{
-	background-color:#F05B47;
+	background-color:#A81D1D;
 }
 
 .sidebar-animate{
@@ -37,22 +37,69 @@ body { padding-top: 40px; }
 }
 
 .page-header{
-	margin-bottom:20px;
+	margin:0;
+	background-color:#23C0BA;
+	padding:10px 20px;
+	color:#FFF;
 }
 
+.status{
+	margin:0 20px;
+}
+
+div#news-feed{
+		padding:0;
+}
+
+#all-posts{
+	border:3px solid #23C0BA;
+	margin-top:-1px;
+	padding:20px 10px;
+}
+
+div#index-side-bar{
+	padding:0;
+}
+
+#popular-tag-box{
+	border: 2px solid #EFE75E;
+
+	#popular-header{
+		background-color: #EFE75E;
+		color:#FFF;
+		padding:10px 20px;
+
+		h3{
+			margin:0;
+			color:#083A2F;
+		}
+	}
+
+	#popular-tags{
+		margin:10px 20px;
+
+		a{
+			color:#777;
+			margin-right:10px;
+		}
+		a:hover{
+			text-decoration: none;
+			color:#A81D1D;
+		}
+
+	}
+
+}
+
+
+
+bg-ora
 /* APPLICATION TEMPALTE CSS */
 
 .notice, .alert{
 	display:none;
 }
 
-#search-button{
-
-}
-
-#search-textfield{
-
-}
 
 .cf:before, .cf:after{
       content:"";
@@ -70,10 +117,12 @@ body { padding-top: 40px; }
     /*-------------------------------------*/
 
     .form-wrapper {
-			float:right;
+			float:none;
+			position:absolute;
       width: 250px;
       padding: 5px;
-      margin: 40px auto 20px auto;
+      margin: 10px auto;
+			display:inline;
       background: #333F4F;
       -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
@@ -134,7 +183,7 @@ body { padding-top: 40px; }
         font: bold 10px/20px 'lucida sans', 'trebuchet MS', 'Tahoma';
         color: #fff;
         text-transform: uppercase;
-        background: #F05B47;
+        background: #A81D1D;
         -moz-border-radius: 0 3px 3px 0;
         -webkit-border-radius: 0 3px 3px 0;
         border-radius: 0 3px 3px 0;
@@ -181,7 +230,7 @@ body { padding-top: 40px; }
 	padding-bottom: 50px;
   border-radius: 50px;
   overflow:hidden;
-  background: #F05B47;
+  background: #A81D1D;
   box-shadow: 0 0 3px gray;
   position:fixed;
   right:18%;
