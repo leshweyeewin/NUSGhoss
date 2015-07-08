@@ -1,5 +1,5 @@
 class Status < ActiveRecord::Base
-	attr_accessible :content, :user_id, :tag_list
+	attr_accessible :content, :user_id, :reported, :tag_list
 	acts_as_taggable
 	acts_as_votable
 	

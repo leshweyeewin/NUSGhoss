@@ -1,6 +1,6 @@
 ActiveAdmin.register Status do
-  actions :all, :except => [:new, :edit]
-  permit_params :content, :user_id, :tag_list
+  actions :all, :except => [:new]
+  permit_params :content, :user_id, :reported, :tag_list
 
   index do
     selectable_column
@@ -8,6 +8,7 @@ ActiveAdmin.register Status do
     column "Status", :content
     column "Author", :user
     column "Tags", :tag_list
+    column "Reported?", :reported 
     column :created_at
     column :updated_at
     actions
@@ -15,9 +16,7 @@ ActiveAdmin.register Status do
 
   form do |f|
     f.inputs do
-      f.input :user
-      f.input :tag_list
-      f.input :content
+      f.input :reported
     end
     f.actions
   end

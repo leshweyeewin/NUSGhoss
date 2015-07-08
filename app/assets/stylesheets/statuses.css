@@ -306,3 +306,8 @@ bg-ora
   text-decoration: none;
   color:#333F4F;
 }
+
+/* Reporting */
+.report a, small{
+  color: red;
+}

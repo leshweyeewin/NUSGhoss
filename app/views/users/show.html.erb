@@ -26,7 +26,7 @@
       <% if @user == current_user %>
         <h2>Your Posts</h2>
         <div class="status-container">
-          <% @statuses.each do |status| %>
+          <% if @statuses.each do |status| %>
             <div class="status">
               <p><%= link_to status.content, status %></p>
               <div class = "tag">
@@ -49,12 +49,14 @@
                 | <%= status.get_likes.size %> pick(s) 
               </div>
             </div>
+          <% end.empty? %>
+            <p>You have not posted any status yet.</p>
           <% end %>
         </div>
 
         <h2>Your Favourite Posts</h2>
         <div class="status-container">
-          <% @liked_statuses.each do |status| %>
+          <% if @liked_statuses.each do |status| %>
             <div class="status">
               <p><%= link_to status.content, status %></p>
               <div class = "tag">
@@ -77,6 +79,8 @@
                 | <%= status.get_likes.size %> pick(s) 
               </div>
             </div>
+          <% end.empty? %>
+            <p>You don't have any favourite status yet.</p>
           <% end %>
         </div>
       <% end %>

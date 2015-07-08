@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'tagged', :to => 'statuses#tagged', :as => :tagged
   get 'statuses/:id/liked', :to => 'statuses#add_to_favourities', :as => :add_to_favourities
   get 'statuses/:id/unliked', :to => 'statuses#remove_from_favourities', :as => :remove_from_favourities
+  get 'statuses/:id/report', :to => 'statuses#report', :as => :report
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

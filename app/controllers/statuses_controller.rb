@@ -1,5 +1,5 @@
 class StatusesController < ApplicationController
-  before_action :set_status, only: [:show, :edit, :update, :destroy, :add_to_favourities, :remove_from_favourities]
+  before_action :set_status, only: [:show, :edit, :update, :destroy, :add_to_favourities, :remove_from_favourities, :report]
   before_action :authenticate_user!, except: [:index, :show, :tagged]
   before_action :find_tagged_statuses, only: [:tagged]
   # GET /statuses
@@ -90,6 +90,11 @@ class StatusesController < ApplicationController
     redirect_to @status
   end
 
+  def report
+    @status.update_attributes :reported => !@status.reported
+    redirect_to @status, notice: 'You have reported this status of having abusive content.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_status
@@ -111,6 +116,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:user_id, :content, :tag_list)
+      params.require(:status).permit(:user_id, :content, :reported, :tag_list)
     end
 end
