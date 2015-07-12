@@ -28,6 +28,15 @@ a.navbar-brand{
 	color:#FFF !important;
 }
 
+/* UNIVERSAL CLASSES */
+.small-text{
+		font-size:0.8em;
+}
+
+.gray{
+	color:#777;
+}
+
 
 /* To prevent fixed navbar covering up the content  */
 body { padding-top: 40px; }
@@ -271,13 +280,164 @@ bg-ora
 
 
 /* NEW STATUS CSS */
-.back-button{
-	margin-top:-30px;
-	padding:6px 40px;
+
+
+.show-status-container{
+	padding:0px;
+	margin:auto;
+	width:500px;
+	margin-top:50px;
+	border: 2px solid #BBB;
+	border-radius: 10px;
+
+	.status-form-header{
+
+		h1{
+			padding:10px;
+			margin:0px;
+			text-align: center;
+			background-color: #333F4F;
+			color: #FFF;
+		}
+
+	}
+
+	.status-form-body{
+
+		padding:10px;
+
+		p{
+			margin:0;
+		}
+
+		textarea#status_tag_list{
+			height:30px;
+		}
+
+		textarea#status_content{
+			height:100px;
+		}
+
+		.form-group.text.required.status_content{
+			margin:0;
+		}
+
+		label.text.required.control-label{
+				font-size:0.8em;
+				color:#777;
+		}
+
+		input.btn.btn-default.status-submit-button{
+				background-color: #333F4F;
+				color:#FFF;
+		}
+
+		input.btn.btn-default.status-submit-button:hover{
+				background-color: #657c9b;
+				color:#FFF;
+		}
+
+		.back-button{
+			background-color: #333F4F;
+			color:#FFF;
+			margin-top:-34px;
+			padding:6px 40px;
+			float:right;
+		}
+
+		.back-button:hover{
+			background-color: #657c9b;
+			color:#FFF;
+		}
+
+	}
+
+}
+
+/* SHOW STATUS CSS */
+
+.status-comment-info{
+	padding-left:10px;
+}
+
+div#status-tag{
+
+	padding:0;
+	padding-left:10px;
+
+	a{
+			font-size:1em;
+			color:#333F4F;
+	}
+	a:hover{
+		color:#A81D1D;
+		font-size:1.1em;
+		text-decoration: none;
+	}
+
+}
+
+div#status-content{
+
+	p{
+		font-size:1.5em;
+		color:#a81d1d;
+		margin-bottom:20px;
+		padding:10px;
+	}
+
+}
+
+div#status-link{
+		a{
+			color:#333F4F;
+			font-size:1em;
+		}
+}
+
+div#status-header{
+	margin:0px;
+	padding:10px 10px 0px 10px;
+	border-bottom: 1px solid #BBB;
+}
+
+div#status-report{
 	float:right;
 }
 
+div#status-comment{
+	padding: 10px;
+	padding-top:30px;
+
+	h3{
+		font-size:1em;
+	}
+
+	label{
+		content: "Comment";
+		font-size:1em;
+		color:#777;
+	}
+}
+
 /* USER LOGIN CSS */
+
+/* Tag Cloud */
+.tag-cloud a{
+  margin-right: 2em;
+  text-decoration: none;
+  color:#333F4F;
+}
+
+/* Reporting */
+.report a, small{
+  color: red;
+}
+
+
+/* ALL MEDIA QUERIES  */
+
+
 @media screen and (max-width:768px){
 	#menu-navbar{
 		display:none;
@@ -298,16 +458,4 @@ bg-ora
 	.hidden-lg{
 		display:none !important;
 	}
-}
-
-/* Tag Cloud */
-.tag-cloud a{
-  margin-right: 2em;
-  text-decoration: none;
-  color:#333F4F;
-}
-
-/* Reporting */
-.report a, small{
-  color: red;
 }
