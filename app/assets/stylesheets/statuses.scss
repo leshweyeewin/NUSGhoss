@@ -10,6 +10,9 @@ a{
 		font-size:1.3em;
 }
 
+.container{
+	margin-top:10px;
+}
 /* Navbar CSS */
 .navbar-default{
 	background-color:#A81D1D;
@@ -289,6 +292,7 @@ bg-ora
 	margin-top:50px;
 	border: 2px solid #BBB;
 	border-radius: 10px;
+	box-shadow: 2px 2px 2px #BBB;
 
 	.status-form-header{
 
@@ -410,6 +414,8 @@ div#status-comment{
 	padding-top:30px;
 
 	h3{
+		padding-top:10px;
+		border-top: 1px dashed #777;
 		font-size:1em;
 	}
 
@@ -418,7 +424,28 @@ div#status-comment{
 		font-size:1em;
 		color:#777;
 	}
+
+	a{
+		font-size:0.8em;
+		color:#333F4F;
+	}
+	a:hover{
+		text-decoration: none;
+		color:#A81D1D;
+	}
+
+	.form-group.text.required.user_comment_content{
+		margin:0;
+	}
+
+	input{
+		margin:auto;
+		display:table;
+	}
 }
+
+/* COMMENT CSS */
+
 
 /* USER LOGIN CSS */
 
@@ -433,6 +460,7 @@ div#status-comment{
 .report a, small{
   color: red;
 }
+
 
 
 /* ALL MEDIA QUERIES  */

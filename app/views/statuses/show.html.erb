@@ -61,7 +61,7 @@
           </div>
           <div class="status-comment-info">
             <p class="small-text gray"><strong><%= @status.user_comments.count %> comment(s)</strong> | <strong><%= @status.get_likes.size %> pick(s) </strong></p>
-          	<%= render :partial => 'comment', :collection => @status.user_comments.order("created_at DESC") %>
+
           </div>
 
         </div>
@@ -82,7 +82,7 @@
 
 
     <div id="status-comment" class="comment">
-
+      <%= render :partial => 'comment', :collection => @status.user_comments.order("created_at DESC") %>
     	<% if user_signed_in? %>
     	  <h3>Add a Comment</h3>
     	  <%= render :partial =>'user_comments/form' %>

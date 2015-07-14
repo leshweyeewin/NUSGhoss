@@ -1,61 +1,42 @@
-<h2>Sign up</h2>
+<div id="registeration-form-wrapper" class="devise-wrapper">
+  <div id="registration-header" class="devise-header">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Sign up</h2>
+      </div>
+      <div class="col-md-6 inactive">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div> <!-- row ends -->
+  </div> <!-- registration header ends -->
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div><%= f.label :first_name %><br />
-    <%= f.text_field :first_name %></div>
+  <div id="registration-form" class="devise-content">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :last_name %><br />
-    <%= f.text_field :last_name %></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div><%= f.label :first_name %><br />
+            <%= f.text_field :first_name, :class=>"half" %></div>
+        </div>
+        <div class="col-md-6">
+          <div><%= f.label :last_name %><br />
+            <%= f.text_field :last_name, :class=>"half"%></div>
+        </div>
+      </div>
+      <div><%= f.label :profile_name %><br />
+        <%= f.text_field :profile_name %></div>
 
-  <div><%= f.label :profile_name %><br />
-    <%= f.text_field :profile_name %></div>
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+      <div><%= f.label :password %><br />
+      <%= f.password_field :password %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+      <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-<!--<script>
-
-$(function(){
-	var apikey = "nt5s4waVtfzugEGRSuW5Z";
-	var myapp = new ivle(apikey);
-
-	// //FOR DEMO PURPOSES ONLY.
-	var re = new RegExp('token=(.+)');
-	var token = re.exec(window.location.href);
-	if (!token){
-		// //go to test.html
-		var re = /(.*)\/.*/;
-		window.location.href = window.location.origin + re.exec(window.location.pathname)[1] + "/test.html";
-	} else {
-		var user = new myapp.user(token[1]);
-		$mainel = $("#main_container");
-		//run tests here.
-		var next, modid;
-
-}
-
-var APIDomain = "https://ivle.nus.edu.sg/";
-var APIUrl = APIDomain + "api/lapi.svc/";
-
-function Populate_UserName() {
-        var url = APIUrl + "UserName_Get?output=json&callback=?&APIKey=" + apikey + "&Token=" + token;
-        $('#dbg_UserInfo').append("<span>Request: " + url + "</span><br />");
-
-        jQuery.getJSON(url, function (data) {
-            $('#lbl_Name').html(data);
-            $('#dbg_UserInfo').append("<span>Response: " + data + "</span>");
-        });
-    }
-</script> -->
+      <div><%= f.submit "Get Started!", :class=>"btn btn-default" %></div>
+      <% end %>
+  </div>
+</div>
