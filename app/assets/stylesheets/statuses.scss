@@ -22,7 +22,14 @@ a{
 	background-color:#333F4F;
 	border:none;
 	margin-top:-1px;
+	margin-right:0 !important;
+	padding-left:0;
+
+	.nav > li > a{
+		padding:10px 0px !important;
+	}
 }
+
 .navbar-toggle:hover{
 	background-color:#333F4F;
 }
@@ -480,6 +487,19 @@ div#status-comment{
 		bottom:5%;
 	}
 
+
+
+
+}
+
+@media screen and (max-width: 440px){
+	.form-wrapper input{
+		width:90px;
+	}
+
+	.form-wrapper{
+		width:170px;
+	}
 }
 
 @media screen and (min-width:768px){

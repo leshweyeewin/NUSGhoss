@@ -182,3 +182,30 @@ div#registration-header{
 		padding-top:20px;
 	}
 }
+
+/* EDIT USER CSS */
+
+div#edit-user-container{
+	padding:0;
+	border: 1px solid #AAA;
+}
+
+div#edit-user-form{
+	padding: 20px 8% 20px 12%;
+	border-right:1px solid #EEE;
+
+	.user-edit-field{
+		margin-bottom:20px;
+
+		input{
+			width:80%;
+		}
+	}
+
+	#btn-update{
+		margin:auto;
+		display:block;
+	}
+
+
+}
