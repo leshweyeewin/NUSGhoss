@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function(){
+  var apikey = "nt5s4waVtfzugEGRSuW5Z";
+  var myapp = new ivle(apikey);
+
+  //TEST AUTH
+  var re = /(.*)\/.*/;
+  myapp.auth($('#register'), window.location.origin + "/users/sign_up");
+});

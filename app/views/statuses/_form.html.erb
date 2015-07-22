@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-  <p><%= f.label :tags, "* Tags (separated by commas)", :class => "small-text gray"  %></p>
+  <p><%= f.label :tags, "* Tags (separated by commas)", :class => "small-text gray", :id=>"edit_tag_list"  %></p>
   <p><%= f.text_area :tag_list, :class => "text required form-control" %></p>
-  <div class="field"><%= f.input :content %><br></div>
+  <div class="field edit-status-content"><%= f.input :content %><br></div>
   <div class="form-actions">
-    <%= f.button :submit, :class=> "status-submit-button" %>
+    <%= f.button :submit, :class=> "status-submit-button center" %>
   </div>
 <% end %>
