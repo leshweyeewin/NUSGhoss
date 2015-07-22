@@ -32,7 +32,7 @@ gem 'activeadmin', github: 'activeadmin'
 # Use Protected Attributes for permission on strong parameters
 gem 'protected_attributes'
 gem 'simple_form'
-
+gem 'coffee-script-source', '1.8.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 # Use Rails 12Factor for assests pipeline issues
