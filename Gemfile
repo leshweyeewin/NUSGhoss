@@ -32,6 +32,7 @@ gem 'activeadmin', github: 'activeadmin'
 # Use Protected Attributes for permission on strong parameters
 gem 'protected_attributes'
 gem 'simple_form'
+# Use Coffee Script Source for ExecJs No Object Error
 gem 'coffee-script-source', '1.8.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
@@ -41,8 +42,11 @@ gem 'rails_12factor', group: :production
 gem 'acts-as-taggable-on'
 # Use Ransack for search functions
 gem 'ransack'
-#Use Acts As Votable for like feature
+# Use Acts As Votable for like feature
 gem 'acts_as_votable'
+# Use OmniAuth for Login with Social Media Platforms
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

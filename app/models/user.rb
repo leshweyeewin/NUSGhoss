@@ -4,10 +4,22 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   	devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
     has_many :statuses, :dependent => :destroy 
     has_many :user_comments, :dependent => :destroy 
+
+  def self.from_omniauth(auth)
+    identity = Identity.find_for_oauth(auth)
+    user = User.where(:email => auth.info.email).first 
+    
+    # Associate the identity with the user if needed
+    if identity.user != user
+      identity.user = user
+      identity.save!
+    end
+    user
+  end
 
 	def full_name
     	[first_name, last_name].join(' ')
