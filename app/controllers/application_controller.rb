@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # Prevent CSRF attacks by raising an exception.
@@ -5,11 +7,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :site_search
   helper_method :popular_tags
-  
+
   def site_search
     @q = Status.ransack(params[:q])
     @q_statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC")
-  end 
+  end
 
   def popular_tags
     ActsAsTaggableOn::Tag.most_used(10)

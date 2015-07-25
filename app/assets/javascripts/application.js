@@ -14,11 +14,98 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(function(){
-  var apikey = "nt5s4waVtfzugEGRSuW5Z";
-  var myapp = new ivle(apikey);
+var apikey = "nt5s4waVtfzugEGRSuW5Z";
+var token = "";
 
-  //TEST AUTH
-  var re = /(.*)\/.*/;
-  myapp.auth($('#register'), window.location.origin + "/users/sign_up");
-});
+function ivleValidation(){
+
+  $(function(){
+    var myapp = new ivle(apikey);
+
+    //TEST AUTH
+    var re = /(.*)\/.*/;
+    myapp.auth($('#register'), window.location.origin + "/users/sign_up");
+  });
+}
+
+function getProfile(){
+
+  var previousUrl = document.referrer;
+  console.log(previousUrl);
+  var loginUrl = "ivle.nus.edu.sg/api/login/?apikey=nt5s4waVtfzugEGRSuW5Z";
+
+  var myapp = new ivle(apikey);
+  console.log(window.location.href);
+
+  var regex = new RegExp('token=(.+)');
+  token = regex.exec(window.location.href);
+
+  if(!token){
+    window.location.href = "/";
+    alert("Error retrieving token! Please retry again or contact system administrator.");
+  }else{
+      console.log(token);
+      profileUri = "https://ivle.nus.edu.sg/api/Lapi.svc/Profile_View?APIKey=" + apikey + "&AuthToken=" + token[1];
+
+      $.ajax({
+      url : profileUri,
+      dataType:"jsonp",
+      success:function(data)
+      {
+          alert(JSON.stringify(data));
+      },
+      error: function(xhr, err, errobj){
+          alert("Error in requesting profile data from IVLE");
+      }
+  });
+
+  }
+}
+
+
+/*
+function getJson(){
+
+
+  var params = {
+      "APIKey" : apikey,
+      "AuthToken" : token,
+      "output" : "json"
+  };
+
+  $.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    data: params,
+    contentType:"application/x-javascript",
+    url: profileUri,
+    xhrFields: { withCredentials: false },
+    success: function(jsonpData){
+      var xmlText = new XMLSerializer().serializeToString(xml);
+      alert(xmlText);
+      //alert(JSON.stringify(jsonpData));
+    },
+    error: function(xhr, err, errobj){
+      console.log('revert to proxy');
+      var request = url + "?" +  decodeURIComponent($.param(params));
+      //console.log(request);
+      if (proxyurl){
+        $.ajax({
+          type: 'GET',
+          dataType: 'json',
+          data:{request: request},
+          url: proxyurl,
+          dataFilter: function(data){
+            return $.parseJSON(data);
+          },
+          success: success,
+          error: error
+        });
+      } else {
+        if (error){
+          error.apply(this,arguments);
+        }
+      }
+    }
+  });
+} */

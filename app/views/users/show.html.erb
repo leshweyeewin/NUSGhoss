@@ -31,7 +31,7 @@
               <p><%= link_to status.content, status %></p>
               <div class = "tag">
                 <% if status.tags.any? %>
-                  <p>Tags: 
+                  <p>Tags:
                   <% status.tags.each do |tag| %>
                     <% if User.search(tag.name) %>
                       <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
@@ -46,11 +46,14 @@
               <div class="meta">
                 <%= time_ago_in_words(status.created_at) + " ago " %>
                 | <%= status.user_comments.count %> comment(s)
-                | <%= status.get_likes.size %> pick(s) 
+                | <%= status.get_likes.size %> pick(s)
               </div>
             </div>
           <% end.empty? %>
             <p>You have not posted any status yet.</p>
+          <% end %>
+          <% if @statuses.length > 0 %>
+            <%= will_paginate @statuses %>
           <% end %>
         </div>
 
@@ -61,7 +64,7 @@
               <p><%= link_to status.content, status %></p>
               <div class = "tag">
                 <% if status.tags.any? %>
-                  <p>Tags: 
+                  <p>Tags:
                   <% status.tags.each do |tag| %>
                     <% if User.search(tag.name) %>
                       <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
@@ -76,13 +79,16 @@
               <div class="meta">
                 <%= time_ago_in_words(status.created_at) + " ago " %>
                 | <%= status.user_comments.count %> comment(s)
-                | <%= status.get_likes.size %> pick(s) 
+                | <%= status.get_likes.size %> pick(s)
               </div>
             </div>
           <% end.empty? %>
             <p>You don't have any favourite status yet.</p>
           <% end %>
         </div>
+      <% end %>
+      <% if @liked_statuses.length > 0 %>
+        <%= will_paginate @liked_statuses %>
       <% end %>
 
       <h2>Mentioned Posts</h2>
@@ -92,7 +98,7 @@
             <p><%= link_to status.content, status %></p>
             <div class = "tag">
               <% if status.tags.any? %>
-                <p>Tags: 
+                <p>Tags:
                 <% status.tags.each do |tag| %>
                   <% if User.search(tag.name) %>
                     <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
@@ -107,14 +113,20 @@
             <div class="meta">
               <%= time_ago_in_words(status.created_at) + " ago " %>
               | <%= status.user_comments.count %> comment(s)
-              | <%= status.get_likes.size %> pick(s) 
+              | <%= status.get_likes.size %> pick(s)
             </div>
           </div>
         <% end.empty? %>
           <p>Sorry, this user is not tagged in any status yet.</p>
         <% end %>
-        <%= link_to 'Back', users_path %>
-        | <%= link_to 'Home', root_path %>
+        <% if @tagged_statuses.length > 0 %>
+          <%= will_paginate @tagged_statuses %>
+        <% end %>
+        <div class="extra-link">
+          <%= link_to 'Back', users_path %>
+          | <%= link_to 'Home', root_path %>
+        </div>
+
       </div>
     </div>
 </div>

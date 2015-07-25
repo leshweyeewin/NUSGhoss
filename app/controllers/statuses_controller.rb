@@ -7,6 +7,7 @@ class StatusesController < ApplicationController
   def index
     @q = Status.ransack(params[:q])
     @statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC")
+    @statuses = Status.paginate(:page => params[:page], :per_page => 10);
   end
 
   # GET /statuses/1
@@ -104,13 +105,13 @@ class StatusesController < ApplicationController
     def find_tagged_statuses
       @user = User.search(params[:tag])
       if @user
-        @statuses = Status.tagged_with(@user.first_name).order("created_at DESC") 
+        @statuses = Status.tagged_with(@user.first_name).order("created_at DESC")
         unless @user.first_name == @user.last_name
           @statuses += Status.tagged_with(@user.last_name).order("created_at DESC")
         end
         unless @user.first_name == @user.profile_name || @user.last_name == @user.profile_name
           @statuses += Status.tagged_with(@user.profile_name).order("created_at DESC")
-        end 
+        end
       end
     end
 

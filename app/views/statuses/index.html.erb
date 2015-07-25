@@ -27,7 +27,11 @@
         </div>
       </div>
     <% end %>
+    <% if @statuses.length > 0 %>
+      <%= will_paginate @statuses %>
+    <% end %>
   </div>
+
 
 </div>
 <div id="index-side-bar" class="col-md-4">
@@ -47,6 +51,5 @@
         <% end %>
       <% end %>
       </div>
-
   </div>
 </div>

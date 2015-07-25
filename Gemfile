@@ -24,6 +24,7 @@ gem 'yui-compressor', '~> 0.12.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'will_paginate', '~> 3.0.6'
 #Added Gems
 # Use Devise for User Model
 gem 'devise'
