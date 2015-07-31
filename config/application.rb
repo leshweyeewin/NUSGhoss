@@ -24,5 +24,6 @@ module NUSGhoss
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompilie = false
     config.serve_static_files = true
+    ActsAsTaggableOn.remove_unused_tags = true
   end
 end

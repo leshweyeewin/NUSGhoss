@@ -110,7 +110,35 @@ div#index-side-bar{
 
 }
 
+#popular-status-box{
+	border: 2px solid #6ADA4A;
 
+	#popular-header{
+		background-color: #6ADA4A;
+		color:#FFF;
+		padding:10px 20px;
+
+		h3{
+			margin:0;
+			color:#083A2F;
+		}
+	}
+
+	#popular-tags{
+		margin:10px 20px;
+
+		a{
+			color:#777;
+			margin-right:10px;
+		}
+		a:hover{
+			text-decoration: none;
+			color:#A81D1D;
+		}
+
+	}
+
+}
 
 bg-ora
 /* APPLICATION TEMPALTE CSS */
