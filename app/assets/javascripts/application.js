@@ -16,15 +16,16 @@
 //= require_tree .
 var apikey = "nt5s4waVtfzugEGRSuW5Z";
 var token = "";
+var ivle_userid = "";
 
-function ivleValidation(){
+function ivleValidation(buttonId){
 
   $(function(){
     var myapp = new ivle(apikey);
 
     //TEST AUTH
     var re = /(.*)\/.*/;
-    myapp.auth($('#register'), window.location.origin + "/users/sign_up");
+    myapp.auth($('#' + buttonId), window.location.origin + "/users/sign_up");
   });
 }
 
@@ -52,10 +53,14 @@ function getProfile(){
       dataType:"jsonp",
       success:function(data)
       {
-          alert(JSON.stringify(data));
+        console.log(JSON.stringify(data));
+        ivle_userid = data.Results[0].UserID;
+        console.log(ivle_userid);
+        $('#user_ivle_id').val(ivle_userid);
+        document.getElementById("#user_ivle_id").setAttribute("readonly", "true");
       },
       error: function(xhr, err, errobj){
-          alert("Error in requesting profile data from IVLE");
+        alert("Error in requesting profile data from IVLE");
       }
   });
 

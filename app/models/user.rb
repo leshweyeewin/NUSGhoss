@@ -1,18 +1,20 @@
 class User < ActiveRecord::Base
-	attr_accessible :first_name, :last_name, :full_name, :profile_name, :email, :password, :password_confirmation, :remember_me
+	attr_accessible :first_name, :last_name, :full_name, :profile_name, :ivle_id, :email, :password, :password_confirmation, :remember_me
   acts_as_voter
+	validates_uniqueness_of :ivle_id
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-    has_many :statuses, :dependent => :destroy 
-    has_many :user_comments, :dependent => :destroy 
+    has_many :statuses, :dependent => :destroy
+    has_many :user_comments, :dependent => :destroy
+
 
   def self.from_omniauth(auth)
     identity = Identity.find_for_oauth(auth)
-    user = User.where(:email => auth.info.email).first 
-    
+    user = User.where(:email => auth.info.email).first
+
     # Associate the identity with the user if needed
     if identity.user != user
       identity.user = user
@@ -26,6 +28,6 @@ class User < ActiveRecord::Base
 	end
 
   def self.search(search)
-      User.find_by_first_name(search) || User.find_by_last_name(search) || User.find_by_profile_name(search) 
+      User.find_by_first_name(search) || User.find_by_last_name(search) || User.find_by_profile_name(search)
   end
 end

@@ -584,6 +584,22 @@ div#status-comment{
 	}
 }
 
+.pagination{
+
+	margin-left:20px;
+	font-size:1em;
+
+	a{
+			color:#4ACAA8;
+			font-size:1em;
+	}
+
+	a:hover{
+		color:#A81D1D;
+		text-decoration: none;
+	}
+}
+
 @media screen and (min-width:768px){
 	.hidden-lg{
 		display:none !important;
