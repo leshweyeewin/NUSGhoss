@@ -31,19 +31,19 @@ function ivleValidation(buttonId){
 
 function getProfile(){
 
-  var previousUrl = document.referrer;
-  console.log(previousUrl);
+
   var loginUrl = "ivle.nus.edu.sg/api/login/?apikey=nt5s4waVtfzugEGRSuW5Z";
 
   var myapp = new ivle(apikey);
-  console.log(window.location.href);
-
+  //console.log(previousUrl);
   var regex = new RegExp('token=(.+)');
   token = regex.exec(window.location.href);
 
   if(!token){
-    window.location.href = "/";
+    /*w
+    indow.location.href = "/";
     alert("Error retrieving token! Please retry again or contact system administrator.");
+    */
   }else{
       console.log(token);
       profileUri = "https://ivle.nus.edu.sg/api/Lapi.svc/Profile_View?APIKey=" + apikey + "&AuthToken=" + token[1];

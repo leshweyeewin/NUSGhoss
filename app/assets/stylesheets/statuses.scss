@@ -570,6 +570,7 @@ div#status-comment{
 		margin:20px auto;
 	}
 
+
 	.show-status-container{
 		width:300px;
 		margin-bottom:30px;
@@ -598,6 +599,12 @@ div#status-comment{
 		color:#A81D1D;
 		text-decoration: none;
 	}
+}
+
+
+
+#user_ivle_id{
+	display:none;
 }
 
 @media screen and (min-width:768px){

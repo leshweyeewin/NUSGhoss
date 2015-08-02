@@ -206,6 +206,16 @@ div#edit-user-form{
 		margin:auto;
 		display:block;
 	}
+}
 
+.hide{
+	display:none;
+}
+
+#registration-header{
+
+	a#facebook-signup{
+		display:none !important;
+	}
 
 }
