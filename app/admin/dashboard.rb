@@ -25,15 +25,6 @@ ActiveAdmin.register_page "Dashboard" do
             column :created_at
             column :updated_at
         end
-        /
-        table_for ActsAsVotable::Vote.order(:vote_weight).limit(15) do
-            column "Status", :votable_id do |vote|
-                link_to Status.find(vote.votable_id).content, [:admin,Status.find(vote.votable_id)]
-            end
-            column "Voters", :voter_id do |vote|
-                link_to User.find(vote.voter_id).full_name, [:admin, User.find(vote.voter_id)]
-            end
-        end/
     end
 
     panel "Reported Statuses" do 

@@ -6,8 +6,7 @@ class StatusesController < ApplicationController
   # GET /statuses.json
   def index
     @q = Status.ransack(params[:q])
-    @statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC")
-    @statuses = Status.paginate(:page => params[:page], :per_page => 10);
+    @statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC").paginate(:page => params[:page], :per_page => 10);
     @popular_statuses = Status.joins("LEFT OUTER JOIN Votes ON votes.votable_id = statuses.id").group("statuses.id").order("COUNT(votes.id) DESC").having("COUNT(votes.id) != 0").limit(15)
   end
 
@@ -18,7 +17,7 @@ class StatusesController < ApplicationController
     if user_signed_in?
       if @status.tags.any?
         @status.tags.each do |tag|
-          if current_user.first_name == tag.name || current_user.last_name == tag.name || current_user.profile_name == tag.name
+          if current_user.ivle_name == tag.name || current_user.profile_name == tag.name
             @tagged_statuses = true
           end
         end
@@ -106,11 +105,8 @@ class StatusesController < ApplicationController
     def find_tagged_statuses
       @user = User.search(params[:tag])
       if @user
-        @statuses = Status.tagged_with(@user.first_name).order("created_at DESC")
-        unless @user.first_name == @user.last_name
-          @statuses += Status.tagged_with(@user.last_name).order("created_at DESC")
-        end
-        unless @user.first_name == @user.profile_name || @user.last_name == @user.profile_name
+        @statuses = Status.tagged_with(@user.ivle_name).order("created_at DESC")
+        unless @user.ivle_name == @user.profile_name
           @statuses += Status.tagged_with(@user.profile_name).order("created_at DESC")
         end
       end

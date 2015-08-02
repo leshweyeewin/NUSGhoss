@@ -1,4 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  respond_to :html, :json, :js
+
   def facebook
     if request.env["omniauth.auth"].info.email.blank?
       redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
@@ -7,7 +9,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.nil?
       session["devise.facebook_data"] = request.env["omniauth.auth"]
-      redirect_to "https://ivle.nus.edu.sg/api/login/?apikey=nt5s4waVtfzugEGRSuW5Z&url=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fsign_up"
+      redirect_to root_url, notice: 'This email address is not registered on the site. Click on "Register" button to create an account.'
     else
       if @user.persisted?
         sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated

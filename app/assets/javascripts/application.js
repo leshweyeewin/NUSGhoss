@@ -17,6 +17,7 @@
 var apikey = "nt5s4waVtfzugEGRSuW5Z";
 var token = "";
 var ivle_userid = "";
+var ivle_username = "";
 
 function ivleValidation(buttonId){
 
@@ -31,7 +32,6 @@ function ivleValidation(buttonId){
 
 function getProfile(){
 
-
   var loginUrl = "ivle.nus.edu.sg/api/login/?apikey=nt5s4waVtfzugEGRSuW5Z";
 
   var myapp = new ivle(apikey);
@@ -40,10 +40,8 @@ function getProfile(){
   token = regex.exec(window.location.href);
 
   if(!token){
-    /*w
-    indow.location.href = "/";
-    alert("Error retrieving token! Please retry again or contact system administrator.");
-    */
+    window.location.href = "/";
+    alert("Registration must be through IVLE validation. Click on Register to create an account.");
   }else{
       console.log(token);
       profileUri = "https://ivle.nus.edu.sg/api/Lapi.svc/Profile_View?APIKey=" + apikey + "&AuthToken=" + token[1];
@@ -55,9 +53,13 @@ function getProfile(){
       {
         console.log(JSON.stringify(data));
         ivle_userid = data.Results[0].UserID;
+        ivle_username = data.Results[0].Name;
         console.log(ivle_userid);
+        console.log(ivle_username);
         $('#user_ivle_id').val(ivle_userid);
+        $('#user_ivle_name').val(ivle_username);
         document.getElementById("#user_ivle_id").setAttribute("readonly", "true");
+        document.getElementById("#user_ivle_name").setAttribute("readonly", "true");
       },
       error: function(xhr, err, errobj){
         alert("Error in requesting profile data from IVLE");

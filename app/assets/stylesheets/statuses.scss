@@ -143,11 +143,6 @@ div#index-side-bar{
 bg-ora
 /* APPLICATION TEMPALTE CSS */
 
-.notice, .alert{
-	display:none;
-}
-
-
 .cf:before, .cf:after{
       content:"";
       display:table;
@@ -604,6 +599,10 @@ div#status-comment{
 
 
 #user_ivle_id{
+	display:none;
+}
+
+#user_ivle_name{
 	display:none;
 }
 
