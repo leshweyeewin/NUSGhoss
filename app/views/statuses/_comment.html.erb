@@ -2,7 +2,7 @@
 	<i><%= comment.content %></i>
 	<div class="meta">
 		<%= time_ago_in_words(comment.created_at) + " ago " %> 
-		<% if comment.user = current_user %>
+		<% if comment.user == current_user %>
 			| <%= link_to "Edit", edit_user_comment_path(comment) %>
 			| <%= link_to "Delete", comment,  method: :delete, data: { confirm: "Are you sure you want to delete this?"} %>
 		<% end %>

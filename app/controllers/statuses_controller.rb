@@ -7,7 +7,7 @@ class StatusesController < ApplicationController
   def index
     @q = Status.ransack(params[:q])
     @statuses = @q.result(distinct:true).includes(:tags).order("created_at DESC").paginate(:page => params[:page], :per_page => 10);
-    @popular_statuses = Status.joins("LEFT OUTER JOIN Votes ON votes.votable_id = statuses.id").group("statuses.id").order("COUNT(votes.id) DESC").having("COUNT(votes.id) != 0").limit(15)
+    @popular_statuses = Status.joins("LEFT OUTER JOIN Votes ON votes.votable_id = statuses.id").group("statuses.id").order("COUNT(votes.id) DESC").having("COUNT(votes.id) != 0").limit(10)
   end
 
   # GET /statuses/1
