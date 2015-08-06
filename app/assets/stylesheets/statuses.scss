@@ -6,6 +6,25 @@ h1, h2, h3, h4, h5, h6, p, a{
 	font-family: 'Lora', serif;
 }
 
+.wrapper{
+		overflow:hidden;
+		position: absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+}
+
+.page-wrapper{
+		background-color: #FFFFF8;
+}
+
+.full-banner-image{
+	margin-top:50px;
+	width:100%;
+	height:100%;
+}
+
 a{
 		font-size:1.3em;
 }
@@ -16,6 +35,24 @@ a{
 /* Navbar CSS */
 .navbar-default{
 	background-color:#A81D1D;
+}
+
+.box-effect-yellow{
+	-webkit-box-shadow: 0px 0px 5px 0px #EFE75E;
+	-moz-box-shadow: 0px 0px 5px 0px #EFE75E;
+	box-shadow: 0px 0px 5px 0px #EFE75E;
+}
+
+.box-effect-green{
+	-webkit-box-shadow: 0px 0px 5px 0px #6ADA4A;
+	-moz-box-shadow: 0px 0px 5px 0px #6ADA4A;
+	box-shadow: 0px 0px 5px 0px #6ADA4A;
+}
+
+.box-effect{
+	-webkit-box-shadow: 0px 0px 5px 0px #000;
+	-moz-box-shadow: 0px 0px 5px 0px #000;
+	box-shadow: 0px 0px 5px 0px #000;
 }
 
 .sidebar-animate{
@@ -62,6 +99,10 @@ body { padding-top: 40px; }
 	color:#FFF;
 }
 
+.bg-white{
+	background-color:white;
+}
+
 .status{
 	margin:0 20px;
 }
@@ -75,11 +116,11 @@ p.message{
 }
 
 div#news-feed{
-		padding:0;
+		padding:10px 15px 0px 0px;
 }
 
 #all-posts{
-	border:3px solid #23C0BA;
+//	border:3px solid #23C0BA;
 	margin-top:-1px;
 	padding:20px 10px;
 }
@@ -96,7 +137,8 @@ div#index-side-bar{
 }
 
 #popular-tag-box{
-	border: 2px solid #EFE75E;
+	//border: 2px solid #EFE75E;
+	margin-top:10px;
 
 	#popular-header{
 		background-color: #EFE75E;
@@ -111,6 +153,7 @@ div#index-side-bar{
 
 	#popular-tags{
 		margin:10px 20px;
+		padding-bottom:10px;
 
 		a{
 			color:#777;
@@ -126,7 +169,8 @@ div#index-side-bar{
 }
 
 #popular-status-box{
-	border: 2px solid #6ADA4A;
+	//border: 2px solid #6ADA4A;
+	margin-top:10px;
 
 	#popular-header{
 		background-color: #6ADA4A;
@@ -618,8 +662,62 @@ div#status-comment{
 	display:none;
 }
 
+.padding-text{
+	padding:20px;
+}
+
+#about{
+
+	text-align: justify;
+
+	h3{
+		padding:0;
+		margin:0 0 10px 0;
+	}
+
+	.col-md-5, .col-md-7{
+		margin:0;
+		padding:0;
+	}
+
+	td{
+		padding-right:15px;
+	}
+}
+
+#home-intro{
+	position: absolute;
+	top:200px;
+	left:5%;
+
+	h3{
+			margin:0;
+			padding:0;
+			font-size:3.8em;
+	}
+
+	p{
+		margin:0;
+		padding:0;
+		font-size:1.5em;
+	}
+}
+
+
 @media screen and (min-width:768px){
 	.hidden-lg{
 		display:none !important;
+	}
+}
+
+@media screen and (max-width:1024px){
+	.full-banner-image{
+		width:200%;
+	}
+}
+
+@media screen and (max-width:768px){
+	.full-banner-image{
+		width:300%;
 	}
 }

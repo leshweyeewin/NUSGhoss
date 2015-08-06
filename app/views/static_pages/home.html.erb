@@ -1,0 +1,21 @@
+<style media="screen">
+  .round-button{
+    display: none;
+  }
+
+  div#alert-message, div#notice-message{
+  	position: absolute;
+  	z-index: 1000;
+  	width:80%;
+  	right:10%;
+  	left:10%;
+  }
+</style>
+<div class="wrapper">
+  <%= image_tag "homepage.jpg", :class=>"full-banner-image" %>
+  <div id="home-intro">
+    <h3>NUSGhoss</h3>
+    <p>Interact with other fellows</p>
+    <%= link_to "Learn more..", static_pages_about_path %>
+  </div>
+</div>

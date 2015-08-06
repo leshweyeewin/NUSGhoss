@@ -1,40 +1,42 @@
 <div id="news-feed" class="col-md-8">
-  <div class="page-header">
-    <h1>News Feed</h1>
-  </div>
-  <div id="all-posts">
-    <% @statuses.each do |status| %>
-      <div class="status">
-        <p><%= link_to status.content, status %></p>
-        <div class = "tag">
-          <% if status.tags.any? %>
-            <p>Tags:
-            <% status.tags.each do |tag| %>
-              <% if User.search(tag.name) %>
-                <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
+  <div class="box-effect">
+    <div class="page-header">
+      <h1>News Feed</h1>
+    </div>
+    <div id="all-posts">
+      <% @statuses.each do |status| %>
+        <div class="status">
+          <p><%= link_to status.content, status %></p>
+          <div class = "tag">
+            <% if status.tags.any? %>
+              <p>Tags:
+              <% status.tags.each do |tag| %>
+                <% if User.search(tag.name) %>
+                  <%= link_to "@"+tag.name, tagged_url(:tag => tag.name) %>
+                <% end %>
+                <% if Facility.find_by_name(tag.name) %>
+                  <%= link_to "#"+tag.name, tagged_url(:tag => tag.name) %>
+                <% end %>
               <% end %>
-              <% if Facility.find_by_name(tag.name) %>
-                <%= link_to "#"+tag.name, tagged_url(:tag => tag.name) %>
-              <% end %>
+              </p>
             <% end %>
-            </p>
-          <% end %>
+          </div>
+          <div class="meta">
+            <%= time_ago_in_words(status.created_at) + " ago " %>
+            | <%= status.user_comments.count %> comment(s)
+            | <%= status.get_likes.size %> pick(s)
+          </div>
         </div>
-        <div class="meta">
-          <%= time_ago_in_words(status.created_at) + " ago " %>
-          | <%= status.user_comments.count %> comment(s)
-          | <%= status.get_likes.size %> pick(s)
-        </div>
-      </div>
-    <% end %>
-    <% if @statuses.length > 0 %>
-      <%= will_paginate @statuses %>
-    <% end %>
+      <% end %>
+      <% if @statuses.length > 0 %>
+        <%= will_paginate @statuses %>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div id="index-side-bar" class="col-md-4">
-  <div id="popular-tag-box">
+  <div id="popular-tag-box" class="box-effect">
     <% if popular_tags.any? %>
       <div id="popular-header">
           <h3>Most Popular Tag(s)</h3>
@@ -53,7 +55,7 @@
   </div>
   <% if @popular_statuses.any? %>
     <div id="index-side-bar" class="col-lg-12 col-md-4">
-      <div id="popular-status-box">
+      <div id="popular-status-box" class="box-effect">
         <div id="popular-header">
           <h3>Most Popular Status(es)</h3>
         </div>
