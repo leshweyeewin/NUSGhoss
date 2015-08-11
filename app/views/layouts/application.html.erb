@@ -47,7 +47,7 @@
         <!-- Mobile Sliding Menu -->
         <div class="navbar-collapse col-xs-4 col-sm-3 col-md-2 sidebar sidebar-right sidebar-animate">
             <ul class="nav navbar-nav pull-right">
-              <li><%= link_to "Feed", statuses_path, {:class => "navbar-brand"} %></li>
+              <li><%= link_to "Feed", statuses_path %></li>
               <li><%= link_to "Users", users_path %></li>
               <li><%= link_to "Facilities", facilities_path %></li>
               <% if user_signed_in? %>
