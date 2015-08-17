@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-	attr_accessible :profile_name, :ivle_id, :ivle_name, :email, :password, :password_confirmation, :remember_me
+	attr_accessible :profile_name, :ivle_id, :ivle_name, :email, :password, :password_confirmation, :remember_me, :image
   acts_as_voter
+  mount_uploader :image, ImageUploader
 
 	validates_uniqueness_of :ivle_id, :on => :create
   # Include default devise modules. Others available are:

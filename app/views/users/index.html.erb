@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Users</h1>
 <table>
-
-
   <% @users.each do |user| %>
 	<tr class="inline-list">
-  		<td><%= image_tag "profile.png", :class=>"image" %></td>
+		<% if user.image.present? %>
+  			<td><%= image_tag user.image_url.to_s, :class=>"image" %></td>
+  		<% else %>
+  			<td><%= image_tag "profile.png", :class=>"image" %></td>
+  		<% end %>
     	<td><%= link_to user.profile_name, user %></td>
 	</tr>
   <% end %>

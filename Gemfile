@@ -48,6 +48,8 @@ gem 'acts_as_votable'
 # Use OmniAuth for Login with Social Media Platforms
 gem 'omniauth'
 gem 'omniauth-facebook'
+# For Uploading photos
+gem 'carrierwave'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

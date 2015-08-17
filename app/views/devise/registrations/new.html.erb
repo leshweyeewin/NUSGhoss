@@ -14,11 +14,15 @@
   </div> <!-- registration header ends -->
 
   <div id="registration-form" class="devise-content">
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:multipart => true}) do |f| %>
       <%= devise_error_messages! %>
 
       <div><%= f.label :profile_name %><br />
         <%= f.text_field :profile_name %>
+      </div>
+
+      <div><%= f.label :image, "Profile Picture" %><br />
+        <%= f.file_field :image %>
       </div>
 
       <div class="hide"><%= f.label :ivle_id  %><br />
