@@ -1,9 +1,9 @@
 <div id="profile-container" class="row">
     <div id="profile" class="col-md-4 bg-cyan full-height no-padding">
         <% if @user.image.present? %>
-          <%= image_tag @user.image_url.to_s, :class=>"profile-image" %>
+          <%= image_tag @user.image_url.to_s, :class=>"profile-image round-image" %>
         <% else %>
-          <%= image_tag "profile.png", :class=>"profile-image" %>
+          <%= image_tag "profile.png", :class=>"profile-image round-image" %>
         <% end %>
 
         <label for="" class="title">Name</label>

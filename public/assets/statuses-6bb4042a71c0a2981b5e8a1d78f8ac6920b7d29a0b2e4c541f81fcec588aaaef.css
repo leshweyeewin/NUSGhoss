@@ -1,0 +1,773 @@
+/* line 5, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Lora', serif;
+}
+
+/* line 9, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.wrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 18, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.page-wrapper {
+  background-color: #FFFFF8;
+}
+
+/* line 22, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.full-banner-image {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 28, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+a {
+  font-size: 1.3em;
+}
+
+/* line 32, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.container {
+  margin-top: 10px;
+}
+
+/* Navbar CSS */
+/* line 36, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.navbar-default {
+  background-color: #A81D1D;
+}
+
+/* line 40, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.box-effect-yellow {
+  -webkit-box-shadow: 0px 0px 5px 0px #EFE75E;
+  -moz-box-shadow: 0px 0px 5px 0px #EFE75E;
+  box-shadow: 0px 0px 5px 0px #EFE75E;
+}
+
+/* line 46, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.box-effect-green {
+  -webkit-box-shadow: 0px 0px 5px 0px #6ADA4A;
+  -moz-box-shadow: 0px 0px 5px 0px #6ADA4A;
+  box-shadow: 0px 0px 5px 0px #6ADA4A;
+}
+
+/* line 52, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.box-effect {
+  -webkit-box-shadow: 0px 0px 5px 0px #000;
+  -moz-box-shadow: 0px 0px 5px 0px #000;
+  box-shadow: 0px 0px 5px 0px #000;
+}
+
+/* line 58, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.sidebar-animate {
+  background-color: #333F4F;
+  border: none;
+  margin-top: -1px;
+  margin-right: 0 !important;
+  padding-left: 0;
+}
+/* line 65, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.sidebar-animate .nav > li > a {
+  padding: 10px 0px !important;
+}
+
+/* line 70, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.navbar-toggle:hover {
+  background-color: #333F4F;
+}
+
+/* line 74, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+a.navbar-brand {
+  color: #FFF !important;
+}
+
+/* UNIVERSAL CLASSES */
+/* line 79, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.small-text {
+  font-size: 0.8em;
+}
+
+/* line 83, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.gray {
+  color: #777;
+}
+
+/* To prevent fixed navbar covering up the content  */
+/* line 89, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+body {
+  padding-top: 40px;
+}
+
+/* line 91, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.nav.navbar-nav a {
+  color: #FFF !important;
+}
+
+/* line 95, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.page-header {
+  margin: 0;
+  background-color: #23C0BA;
+  padding: 10px 20px;
+  color: #FFF;
+}
+
+/* line 102, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.bg-white {
+  background-color: white;
+}
+
+/* line 106, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.status {
+  margin: 0 20px;
+}
+
+/* line 110, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+p.message {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 0px;
+  border: 1px solid;
+  font-size: 16px;
+}
+
+/* line 118, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#news-feed {
+  padding: 10px 5px 0px 5px;
+}
+
+/* line 122, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#all-posts {
+  margin-top: -1px;
+  padding: 20px 10px;
+}
+
+/* line 128, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#index-side-bar {
+  padding: 0px 5px;
+}
+
+/* line 132, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#popular-status-container {
+  padding: 0;
+}
+
+/* line 138, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box a {
+  font-size: 16px;
+}
+
+/* line 143, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-tag-box {
+  margin-top: 10px;
+}
+/* line 147, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-tag-box #popular-header {
+  background-color: #EFE75E;
+  color: #FFF;
+  padding: 10px 20px;
+}
+/* line 152, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-tag-box #popular-header h3 {
+  margin: 0;
+  color: #083A2F;
+}
+/* line 158, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-tag-box #popular-tags {
+  margin: 10px 20px;
+  padding-bottom: 10px;
+}
+/* line 162, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-tag-box #popular-tags a {
+  color: #777;
+  margin-right: 10px;
+}
+/* line 166, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-tag-box #popular-tags a:hover {
+  text-decoration: none;
+  color: #A81D1D;
+}
+
+/* line 175, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box {
+  margin-top: 10px;
+}
+/* line 179, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box #popular-header {
+  background-color: #6ADA4A;
+  color: #FFF;
+  padding: 10px 20px;
+}
+/* line 184, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box #popular-header h3 {
+  margin: 0;
+  color: #083A2F;
+}
+/* line 190, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box #popular-tags {
+  margin: 10px 20px;
+}
+/* line 193, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box #popular-tags a {
+  color: #777;
+  margin-right: 10px;
+}
+/* line 197, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#popular-status-box #popular-tags a:hover {
+  text-decoration: none;
+  color: #A81D1D;
+}
+
+/* line 206, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+input.btn.btn-default.status-submit-button.center {
+  margin: 0;
+}
+
+/* APPLICATION TEMPALTE CSS */
+/* line 211, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.cf:before, .cf:after {
+  content: "";
+  display: table;
+}
+
+/* line 216, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 220, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.cf {
+  zoom: 1;
+}
+
+/*-------------------------------------*/
+/* line 226, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper {
+  float: none;
+  position: absolute;
+  width: 250px;
+  padding: 5px;
+  margin: 10px auto;
+  display: inline;
+  background: #333F4F;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* line 242, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper input {
+  width: 180px;
+  height: 20px;
+  padding-left: 5px;
+  float: left;
+  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: 0;
+  background: #eee;
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* line 255, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+}
+
+/* line 263, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper input::-webkit-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* line 269, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper input:-moz-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* line 275, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper input:-ms-input-placeholder {
+  color: #999;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* line 281, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 20px;
+  width: 60px;
+  font: bold 10px/20px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  color: #fff;
+  text-transform: uppercase;
+  background: #A81D1D;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* line 300, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button:hover {
+  background: #e54040;
+}
+
+/* line 304, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button:active,
+.form-wrapper #search-button:focus {
+  background: #c42f2f;
+}
+
+/* line 309, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button:before {
+  content: '';
+  position: absolute;
+  border-width: 8px 8px 8px 0;
+  border-style: solid solid solid none;
+  border-color: transparent #d83c3c transparent;
+  top: 12px;
+  left: -6px;
+}
+
+/* line 319, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button:hover:before {
+  border-right-color: #e54040;
+}
+
+/* line 323, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button:focus:before {
+  border-right-color: #c42f2f;
+}
+
+/* line 327, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.form-wrapper #search-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* INDEX PAGE CSS */
+/* line 334, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.round-button-circle {
+  width: 75px;
+  height: 75px;
+  padding-bottom: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #A81D1D;
+  box-shadow: 0 0 3px gray;
+  position: fixed;
+  right: 18%;
+  bottom: 10%;
+}
+
+/* line 346, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.round-button-circle:hover {
+  background: #B40404;
+}
+
+/* line 349, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.round-button a {
+  display: block;
+  float: left;
+  width: 100%;
+  padding-top: 68%;
+  padding-bottom: 50%;
+  line-height: 1em;
+  margin-top: -0.9em;
+  text-align: center;
+  color: #FFF;
+  font-family: Verdana;
+  font-size: 3em;
+  text-decoration: none;
+}
+
+/* line 364, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.status a {
+  text-decoration: none;
+  color: #333F4F;
+}
+
+/* line 369, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.status p {
+  margin: 0;
+  color: #333F4F;
+}
+
+/* line 374, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.meta {
+  margin-bottom: 20px;
+  color: #777;
+}
+
+/* NEW STATUS CSS */
+/* line 382, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.center {
+  margin: auto;
+  display: table;
+}
+
+/* line 387, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container {
+  padding: 0px;
+  margin: auto;
+  width: 500px;
+  margin-top: 50px;
+  border: 2px solid #BBB;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #BBB;
+}
+/* line 398, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-header h1 {
+  padding: 10px;
+  margin: 0px;
+  text-align: center;
+  background-color: #333F4F;
+  color: #FFF;
+}
+/* line 408, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body {
+  padding: 10px;
+}
+/* line 412, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body p {
+  margin: 0;
+}
+/* line 416, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body textarea#status_tag_list {
+  height: 30px;
+}
+/* line 420, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body textarea#status_content {
+  height: 100px;
+}
+/* line 424, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body .form-group.text.required.status_content {
+  margin: 0;
+}
+/* line 428, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body label.text.required.control-label {
+  font-size: 0.8em;
+  color: #777;
+}
+/* line 433, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body input.btn.btn-default.status-submit-button {
+  background-color: #333F4F;
+  color: #FFF;
+}
+/* line 438, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body input.btn.btn-default.status-submit-button:hover {
+  background-color: #657c9b;
+  color: #FFF;
+}
+/* line 443, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body .back-button {
+  background-color: #333F4F;
+  color: #FFF;
+  margin-top: -34px;
+  padding: 6px 40px;
+  float: right;
+}
+/* line 451, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.show-status-container .status-form-body .back-button:hover {
+  background-color: #657c9b;
+  color: #FFF;
+}
+
+/* SHOW STATUS CSS */
+/* line 462, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.status-comment-info {
+  padding-left: 10px;
+}
+
+/* line 466, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-tag {
+  padding: 0;
+  padding-left: 10px;
+}
+/* line 471, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-tag a {
+  font-size: 1em;
+  color: #333F4F;
+}
+/* line 475, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-tag a:hover {
+  color: #A81D1D;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+/* line 485, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-content p {
+  font-size: 1.5em;
+  color: #a81d1d;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* line 495, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-link a {
+  color: #333F4F;
+  font-size: 1em;
+}
+
+/* line 501, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-header {
+  margin: 0px;
+  padding: 10px 10px 0px 10px;
+  border-bottom: 1px solid #BBB;
+}
+
+/* line 507, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-report {
+  float: right;
+}
+
+/* line 511, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment {
+  padding: 10px;
+  padding-top: 30px;
+}
+/* line 515, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment h3 {
+  padding-top: 10px;
+  border-top: 1px dashed #777;
+  font-size: 1em;
+}
+/* line 521, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment label {
+  content: "Comment";
+  font-size: 1em;
+  color: #777;
+}
+/* line 527, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment a {
+  font-size: 0.8em;
+  color: #333F4F;
+}
+/* line 531, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment a:hover {
+  text-decoration: none;
+  color: #A81D1D;
+}
+/* line 536, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment .form-group.text.required.user_comment_content {
+  margin: 0;
+}
+/* line 540, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+div#status-comment input {
+  margin: auto;
+  display: table;
+}
+
+/* EDIT STATUS CSS */
+/* line 548, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#edit-status-container {
+  padding: 10px;
+}
+
+/* line 552, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#edit_tag_list {
+  height: 30px;
+}
+
+/* line 556, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.edit-status-content textarea {
+  height: 100px;
+}
+
+/* line 560, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.edit-status-content .form-group {
+  margin-bottom: 0;
+}
+
+/* USER LOGIN CSS */
+/* Tag Cloud */
+/* line 568, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.tag-cloud a {
+  margin-right: 2em;
+  text-decoration: none;
+  color: #333F4F;
+}
+
+/* Reporting */
+/* line 575, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.report a, small {
+  color: red;
+}
+
+/* ALL MEDIA QUERIES  */
+@media screen and (max-width: 768px) {
+  /* line 585, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  #menu-navbar {
+    display: none;
+  }
+
+  /* line 589, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  ul.nav.navbar-nav.pull-right {
+    width: 100%;
+  }
+
+  /* line 593, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .round-button-circle {
+    right: 5%;
+    bottom: 5%;
+  }
+}
+@media screen and (max-width: 440px) {
+  /* line 604, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .form-wrapper input {
+    width: 60px !important;
+  }
+
+  /* line 608, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .navbar-brand {
+    font-size: 12px;
+    padding: 15px 10px;
+  }
+
+  /* line 613, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .form-wrapper input#search-textfield {
+    width: 90px !important;
+  }
+
+  /* line 617, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .form-wrapper {
+    width: 170px !important;
+  }
+
+  /* line 621, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .devise-wrapper {
+    width: 280px !important;
+  }
+
+  /* line 625, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .col-md-6.inactive {
+    display: none;
+  }
+
+  /* line 629, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  div#registration-header h2 {
+    margin: 20px auto;
+  }
+
+  /* line 634, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .show-status-container {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+
+  /* line 639, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .container {
+    padding: 0;
+  }
+
+  /* line 643, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  div#status-info {
+    margin-left: 10px;
+  }
+}
+/* line 648, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.pagination {
+  margin-left: 20px;
+  font-size: 1em;
+}
+/* line 653, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.pagination a {
+  color: #4ACAA8;
+  font-size: 1em;
+}
+/* line 658, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.pagination a:hover {
+  color: #A81D1D;
+  text-decoration: none;
+}
+
+/* line 664, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#user_ivle_id {
+  display: none;
+}
+
+/* line 668, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#user_ivle_name {
+  display: none;
+}
+
+/* line 672, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+.padding-text {
+  padding: 20px;
+}
+
+/* line 676, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#about {
+  text-align: justify;
+}
+/* line 680, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#about h3 {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+/* line 685, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#about .col-md-5, #about .col-md-7 {
+  margin: 0;
+  padding: 0;
+}
+/* line 690, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#about td {
+  padding-right: 15px;
+}
+
+/* line 695, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#home-intro {
+  position: absolute;
+  top: 200px;
+  left: 5%;
+}
+/* line 700, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#home-intro h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 3.8em;
+}
+/* line 706, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+#home-intro p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 715, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .hidden-lg {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  /* line 721, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .full-banner-image {
+    width: 200%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 727, /Users/hanlynn/Documents/Programming/GitHub/NUSGhoss/app/assets/stylesheets/statuses.scss */
+  .full-banner-image {
+    width: 300%;
+  }
+}

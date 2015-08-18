@@ -116,7 +116,7 @@ p.message{
 }
 
 div#news-feed{
-		padding:10px 15px 0px 0px;
+		padding:10px 5px 0px 5px;
 }
 
 #all-posts{
@@ -126,7 +126,11 @@ div#news-feed{
 }
 
 div#index-side-bar{
-	padding:0;
+	padding:0px 5px;;
+}
+
+div#popular-status-container{
+		padding:0;
 }
 
 #popular-status-box{
@@ -199,6 +203,9 @@ div#index-side-bar{
 
 }
 
+input.btn.btn-default.status-submit-button.center{
+	margin:0;
+}
 /* APPLICATION TEMPALTE CSS */
 
 .cf:before, .cf:after{
