@@ -50,6 +50,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 # For Uploading photos
 gem 'carrierwave'
+gem 'cloudinary'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -14,12 +14,12 @@
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
               <%= link_to "NUSGhoss", root_path, {:class=>"navbar-brand"} %>
-            		<div class="search">
-                  <%= search_form_for @q, :html => { :class => "form-wrapper cf" } do |f| %>
-            	    <%= f.text_field :tags_name_or_content_cont, :id => "search-textfield" %>
-            	      <%= f.submit "Search", :id => 'search-button'  %>
-                    <% end %>
-                </div>
+            	<div class="search">
+                <%= search_form_for @q, :html => { :class => "form-wrapper cf" } do |f| %>
+            	  <%= f.text_field :tags_name_or_content_cont, :id => "search-textfield" %>
+            	    <%= f.submit "Search", :id => 'search-button'  %>
+                  <% end %>
+              </div>
               <button type="button" class="navbar-toggle hidden-md hidden-lg" data-toggle="sidebar" data-target=".sidebar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>

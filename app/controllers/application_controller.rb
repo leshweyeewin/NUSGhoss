@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def popular_tags
-    ActsAsTaggableOn::Tag.most_used(10)
+    ActsAsTaggableOn::Tag.most_used(10).where.not(:taggings_count => 0)
   end
 
   protected

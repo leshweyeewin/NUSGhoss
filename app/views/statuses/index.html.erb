@@ -4,7 +4,7 @@
       <h1>News Feed</h1>
     </div>
     <div id="all-posts">
-      <% @statuses.each do |status| %>
+      <% if @statuses.each do |status| %>
         <div class="status">
           <p><%= link_to status.content, status %></p>
           <div class = "tag">
@@ -27,6 +27,8 @@
             | <%= status.get_likes.size %> pick(s)
           </div>
         </div>
+      <% end.empty? %>
+        <p>There are no statuses yet.</p>
       <% end %>
       <% if @statuses.length > 0 %>
         <%= will_paginate @statuses %>
