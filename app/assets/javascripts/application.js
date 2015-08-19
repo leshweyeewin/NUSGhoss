@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require cloudinary
 //= require_tree .
 var apikey = "nt5s4waVtfzugEGRSuW5Z";
 var token = "";

@@ -4,7 +4,7 @@
   <% @users.each do |user| %>
 	<tr class="inline-list">
 		<% if user.image.present? %>
-  			<td><%= image_tag user.image_url.to_s, :class=>"image round-image" %></td>
+  			<td><%= cl_image_tag user.image_url, :class=>"image round-image" %></td>
   		<% else %>
   			<td><%= image_tag "profile.png", :class=>"image round-image" %></td>
   		<% end %>

@@ -1,3 +1,4 @@
+<%= cloudinary_js_config %>
 <script>
   getProfile();
 </script>
@@ -21,8 +22,9 @@
         <%= f.text_field :profile_name %>
       </div>
 
-      <div><%= f.label :image, "Profile Picture" %><br />
-        <%= f.file_field :image %>
+      <div>
+        <%= f.label :image, "Profile Picture" %><br />
+        <%= f.cl_image_upload :image %>
       </div>
 
       <div class="hide"><%= f.label :ivle_id  %><br />
