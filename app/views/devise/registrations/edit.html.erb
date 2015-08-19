@@ -14,9 +14,10 @@
             <%= f.text_field :profile_name %>
           </div>
 
-          <div class="user-edit-field">
+          <div class="user-edit-field hide">
             <%= f.label :image, "Profile Picture" %><br />
             <%= f.cl_image_upload :image %>
+            <%= f.hidden_field :image %>
           </div>
 
           <div class="user-edit-field">
